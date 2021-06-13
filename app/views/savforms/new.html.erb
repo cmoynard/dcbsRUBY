@@ -1,0 +1,82 @@
+<h1>Demande de SAV</h1>
+
+<%= form_with model: @savform do |form| %>
+  
+    <%= form.label :nom %><br>
+    <%= form.text_field :nom %>
+    <% @savform.errors.full_messages_for(:nom).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :prenom %><br>
+    <%= form.text_field :prenom %>
+    <% @savform.errors.full_messages_for(:prenom).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :mail %><br>
+    <%= form.text_field :mail %>
+    <% @savform.errors.full_messages_for(:mail).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :adresse %><br>
+    <%= form.text_field :adresse %>
+    <% @savform.errors.full_messages_for(:adresse).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :ville %><br>
+    <%= form.text_field :ville %>
+    <% @savform.errors.full_messages_for(:ville).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :postal %><br>
+    <%= form.text_field :postal %>
+    <% @savform.errors.full_messages_for(:postal).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :numCommande %><br>
+    <%= form.text_field :numCommande %>
+    <% @savform.errors.full_messages_for(:numCommande).each do |message| %>
+      <%= message %>
+    <% end %>
+
+<br></br>
+    <%= puts @fournis %>
+    <%= form.label :fournisseur %><br>
+    <%= form.select :fournisseur, @fournis.map { |frn| [frn.nom_f] ; } %><br><br>
+  
+    <%= form.label :numTel %><br>
+    <%= form.text_field :numTel %>
+    <% @savform.errors.full_messages_for(:numTel).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <%= form.label :contenue %><br>
+    <%= form.text_area :contenue %>
+    <% @savform.errors.full_messages_for(:contenue).each do |message| %>
+      <%= message %>
+    <% end %>
+  
+<br></br>
+  
+    <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer le formulaire</button> <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", root_path%></button>
+  
+<% end %>

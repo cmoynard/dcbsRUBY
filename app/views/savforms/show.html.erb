@@ -1,0 +1,18 @@
+<h1>Information</h1>
+<p><strong>Nom : </strong><%=@savform.nom%></p>
+<p><strong>Prénom : </strong><%=@savform.prenom%></p>
+<p><strong>Mail : </strong><%=@savform.mail%></p>
+<p><strong>Adresse : </strong><%=@savform.adresse%></p>
+<p><strong>Ville : </strong><%=@savform.ville%></p>
+<p><strong>Code postal : </strong><%=@savform.postal%></p>
+<p><strong>Numéro de commande : </strong><%=@savform.numCommande%></p>
+<p><strong>Fournisseur : </strong><%=@savform.fournisseur%></p>
+<p><strong>Numéro de téléphone : </strong><%=@savform.numTel%></p>
+<p><strong>Commentaire : </strong><%=@savform.contenue%></p>
+
+<button class="btn, btn-lg btn-outline-dark"><%= link_to "Supprimer", savform_path(@savform),
+                  method: :delete,
+                  data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" } %></button>
+
+
+<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path %></button>

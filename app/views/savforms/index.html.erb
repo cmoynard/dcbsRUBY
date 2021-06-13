@@ -1,0 +1,10 @@
+<h1 class="display-4">Liste des formulaires SAV</h1>
+<br>
+<ul>
+    <%@savforms.each do |savform|%>
+        <li><%=link_to savform.numCommande, savform%></li>
+    <%end%>
+
+</ul>
+<br>
+<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", accadmin_path %></button>

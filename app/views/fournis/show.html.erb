@@ -1,0 +1,13 @@
+<h1>Fournisseur : <%= @fourni.nom_f %></h1>
+
+<p>Nom : <%= @fourni.nom_f %></p>
+
+<p>Mail : <%= @fourni.mail_f %></p>
+
+<p>Numéro : <%= @fourni.num_f %></p>
+<br>
+<center>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" } %></button><br>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path%></button>
+</center>
