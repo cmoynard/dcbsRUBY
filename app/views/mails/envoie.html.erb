@@ -1,0 +1,13 @@
+<%
+
+smtp = Net::SMTP.start("smtp.gmail.com", 587, "gmail.com", "testdcbsruby@gmail.com", "Testdcbsruby@66", :plain)
+
+msg = <<END_OF_MESSAGE
+From : "testdcbsruby@gmail.com"
+to:#{fournis.mail_f}
+subject : Demande de SAV DCBS
+Date:
+
+Nom et prénom client : #{savforms.nom}  #{savforms.prenom}
+END_OF_MESSAGE
+%>
