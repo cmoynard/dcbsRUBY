@@ -1,14 +1,14 @@
 <navbar>
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
+<button class="btn btn-lg btn-outline-danger"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
 </navbar>
 <center>
-<h1 class="display-4"><strong>Page fournisseur !</strong></h1>
+<h1 id="title" class="display-4"><strong>Page fournisseur !</strong></h1>
 <br><br>
-<h2>Créer un fournisseur</h2>
+<h2 id="title">Créer un fournisseur</h2>
 <br>
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Nouveau fournisseur", new_fourni_path, class: "no-underline"%></button>
+<button class="btn btn-lg btn-outline-success"><%= link_to "Nouveau fournisseur", new_fourni_path, class: "no-underline"%></button>
 <br></br><br>
-<h2>Liste fournisseurs</h2>
+<h2 id="title">Liste fournisseurs</h2>
 <ul>
     <% @fournis.each do |fourni| %>
         <li>

@@ -1,4 +1,4 @@
-<h1 class="display-4">Liste des formulaires SAV</h1>
+<h1 id="title" class="display-2">Liste des formulaires SAV</h1>
 <br>
 <ul>
     <%@savforms.each do |savform|%>
@@ -7,4 +7,4 @@
 
 </ul>
 <br>
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", accadmin_path %></button>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", accadmin_path, class:"no-underline" %></button>

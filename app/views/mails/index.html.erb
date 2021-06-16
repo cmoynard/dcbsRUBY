@@ -1,15 +1,15 @@
 <navbar>
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
+<button class="btn btn-lg btn-outline-danger"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
 </navbar>
-<h1>Les mails sah</h1>
+<h1 id="title" class="display-2">Envoyer un mail !</h1>
 <br>
 <%= form_with(scope: "fournis") do |f| %>
-    <%= f.label :fournisseur %><br>
+    <%= f.label :fournisseur , id:"simpletext"%><br>
     <%= f.select :id, @fournis.map { |frn| [frn.nom_f, frn.id] } %><br><br>
 
-    <%= f.label :commande %><br>
+    <%= f.label :commande, id:"simpletext" %><br>
     <%= f.select :id, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
 
 <% end %>
-
-<button class="btn, btn-lg btn-outline-success"><%= link_to "Envoyer un mail TEST", envoiemail_path, class: "no-underline"%></button>
+<br>
+<button class="btn btn-lg btn-outline-success"><%= link_to "Envoyer un mail TEST", envoiemail_path, class: "no-underline"%></button>

@@ -1,13 +1,13 @@
-<h1>Fournisseur : <%= @fourni.nom_f %></h1>
+<h1 id="title" class="display-2">Fournisseur : <%= @fourni.nom_f %></h1>
 
-<p>Nom : <%= @fourni.nom_f %></p>
+<p id="simpletext">Nom : <%= @fourni.nom_f %></p>
 
-<p>Mail : <%= @fourni.mail_f %></p>
+<p id="simpletext">Mail : <%= @fourni.mail_f %></p>
 
-<p>Numéro : <%= @fourni.num_f %></p>
+<p id="simpletext">Numéro : <%= @fourni.num_f %></p>
 <br>
 <center>
-<button class="btn btn-lg btn-outline-dark"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button>
-<button class="btn btn-lg btn-outline-dark"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" } %></button><br>
-<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path%></button>
+<button class="btn btn-lg btn-outline-success"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button>
+<button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline" %></button><br>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
 </center>

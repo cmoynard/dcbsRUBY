@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "/email", to: "mails#index"
 
+  get "/envoiemail", to: "mails#envoie"
+
   resources :fournis
 
   resources :savforms

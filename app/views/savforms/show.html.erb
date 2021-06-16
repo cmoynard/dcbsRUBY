@@ -1,18 +1,18 @@
-<h1>Information</h1>
-<p><strong>Nom : </strong><%=@savform.nom%></p>
-<p><strong>Prénom : </strong><%=@savform.prenom%></p>
-<p><strong>Mail : </strong><%=@savform.mail%></p>
-<p><strong>Adresse : </strong><%=@savform.adresse%></p>
-<p><strong>Ville : </strong><%=@savform.ville%></p>
-<p><strong>Code postal : </strong><%=@savform.postal%></p>
-<p><strong>Numéro de commande : </strong><%=@savform.numCommande%></p>
-<p><strong>Fournisseur : </strong><%=@savform.fournisseur%></p>
-<p><strong>Numéro de téléphone : </strong><%=@savform.numTel%></p>
-<p><strong>Commentaire : </strong><%=@savform.contenue%></p>
+<h1 id="title" class="display-2">Information</h1>
+<p id="simpletext"><strong>Nom : </strong><%=@savform.nom%></p>
+<p id="simpletext"><strong>Prénom : </strong><%=@savform.prenom%></p>
+<p id="simpletext"><strong>Mail : </strong><%=@savform.mail%></p>
+<p id="simpletext"><strong>Adresse : </strong><%=@savform.adresse%></p>
+<p id="simpletext"><strong>Ville : </strong><%=@savform.ville%></p>
+<p id="simpletext"><strong>Code postal : </strong><%=@savform.postal%></p>
+<p id="simpletext"><strong>Numéro de commande : </strong><%=@savform.numCommande%></p>
+<p id="simpletext"><strong>Fournisseur : </strong><%=@savform.fournisseur%></p>
+<p id="simpletext"><strong>Numéro de téléphone : </strong><%=@savform.numTel%></p>
+<p id="simpletext"><strong>Commentaire : </strong><%=@savform.contenue%></p>
 
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Supprimer", savform_path(@savform),
+<button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
                   method: :delete,
-                  data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" } %></button>
+                  data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button>
 
 
-<button class="btn, btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path %></button>
+<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>

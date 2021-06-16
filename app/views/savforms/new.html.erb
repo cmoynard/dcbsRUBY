@@ -1,82 +1,92 @@
-<h1>Demande de SAV</h1>
+<center>
+<h1 id="title" class="display-2 mb-5">Demande de SAV</h1>
 
 <%= form_with model: @savform do |form| %>
-  
-    <%= form.label :nom %><br>
-    <%= form.text_field :nom %>
+<table>
+<tr>
+<td>  
+    <%= form.label :nom, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :nom, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:nom).each do |message| %>
       <%= message %>
     <% end %>
-  
-<br></br>
-  
-    <%= form.label :prenom %><br>
-    <%= form.text_field :prenom %>
+</td>  
+<td>  
+    <%= form.label :prenom, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :prenom, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:prenom).each do |message| %>
       <%= message %>
     <% end %>
-  
-<br></br>
-  
-    <%= form.label :mail %><br>
-    <%= form.text_field :mail %>
+</td>
+<td>  
+    <%= form.label :mail, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :mail, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:mail).each do |message| %>
       <%= message %>
     <% end %>
-  
+</td>
+</tr>
+</table>  
 <br></br>
-  
-    <%= form.label :adresse %><br>
-    <%= form.text_field :adresse %>
+<table>
+<tr>
+<td>  
+    <%= form.label :adresse, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :adresse, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:adresse).each do |message| %>
       <%= message %>
     <% end %>
-  
-<br></br>
-  
-    <%= form.label :ville %><br>
-    <%= form.text_field :ville %>
+</td>
+<td>  
+    <%= form.label :ville, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :ville, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:ville).each do |message| %>
       <%= message %>
     <% end %>
-  
-<br></br>
-  
-    <%= form.label :postal %><br>
-    <%= form.text_field :postal %>
+</td>
+<td>  
+    <%= form.label :postal, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :postal, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:postal).each do |message| %>
       <%= message %>
     <% end %>
-  
+</td>
+</tr>
+</table>  
 <br></br>
-  
-    <%= form.label :numCommande %><br>
-    <%= form.text_field :numCommande %>
+<table>
+<tr>
+<td>  
+    <%= form.label :numCommande, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :numCommande, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:numCommande).each do |message| %>
       <%= message %>
     <% end %>
-
-<br></br>
-    <%= puts @fournis %>
-    <%= form.label :fournisseur %><br>
-    <%= form.select :fournisseur, @fournis.map { |frn| [frn.nom_f] ; } %><br><br>
-  
-    <%= form.label :numTel %><br>
-    <%= form.text_field :numTel %>
+</td>
+<td>  
+    <%= form.label :numTel, id:"simpletext", class:"mx-3" %><br>
+    <%= form.text_field :numTel, class:"mx-3" %>
     <% @savform.errors.full_messages_for(:numTel).each do |message| %>
       <%= message %>
     <% end %>
-  
+</td>
+</tr>
+</table>
 <br></br>
+
+    <%= puts @fournis %>
+    <%= form.label :fournisseur, id:"simpletext" %><br>
+    <%= form.select :fournisseur, @fournis.map { |frn| [frn.nom_f] ; } %><br><br>
   
-    <%= form.label :contenue %><br>
-    <%= form.text_area :contenue %>
+    <%= form.label :contenue, id:"simpletext" %><br>
+    <%= form.text_area :contenue, rows:"4", cols:"30" %>
     <% @savform.errors.full_messages_for(:contenue).each do |message| %>
       <%= message %>
     <% end %>
   
 <br></br>
   
-    <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer le formulaire</button> <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", root_path%></button>
+    <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer le formulaire</button> <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", root_path, class:"no-underline"%></button>
   
 <% end %>
+</center>

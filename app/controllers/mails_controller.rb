@@ -5,4 +5,7 @@ class MailsController < ApplicationController
         @savforms = Savform.all
     end
 
+    def envoie
+        
+    end
 end
