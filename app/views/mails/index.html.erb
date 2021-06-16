@@ -11,3 +11,5 @@
     <%= f.select :id, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
 
 <% end %>
+
+<button class="btn, btn-lg btn-outline-success"><%= link_to "Envoyer un mail TEST", envoiemail_path, class: "no-underline"%></button>
