@@ -85,6 +85,11 @@
     <% end %>
   
 <br></br>
+
+  <%= form.label "Facture", multiple: true, id:"simpletext"%>
+  <%= form.file_field :facture, id:"simpletext"%>
+
+<br></br>
   
     <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer le formulaire</button> <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", root_path, class:"no-underline"%></button>
   

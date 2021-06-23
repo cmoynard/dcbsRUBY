@@ -30,7 +30,7 @@ class SavformsController < ApplicationController
 
   private
     def savform_params
-      params.require(:savform).permit(:nom, :prenom, :mail, :adresse, :ville, :postal, :numCommande, :numTel, :contenue, :fournisseur)
+      params.require(:savform).permit(:nom, :prenom, :mail, :adresse, :ville, :postal, :numCommande, :numTel, :contenue, :fournisseur, :facture)
     end
 end
 

@@ -9,6 +9,11 @@
 <p id="simpletext"><strong>Fournisseur : </strong><%=@savform.fournisseur%></p>
 <p id="simpletext"><strong>Numéro de téléphone : </strong><%=@savform.numTel%></p>
 <p id="simpletext"><strong>Commentaire : </strong><%=@savform.contenue%></p>
+<p id="simpletext"><strong>Facture : </strong></p>
+<%if @savform.facture.attached?%>
+<%= image_tag @savform.facture, style: "width: 200px; display: block;" %>
+<% end %> <br>
+
 
 <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
                   method: :delete,

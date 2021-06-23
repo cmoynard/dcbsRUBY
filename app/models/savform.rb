@@ -8,4 +8,6 @@ class Savform < ApplicationRecord
     validates :fournisseur, :presence => {message: "Veuillez entrer votre numéro de commande." }
     validates :numTel, :presence => {message: "Veuillez entrer un numéro." }, :numericality => {message: "Il faut des chiffres." }, :length => { minimum: 10, maximum: 10, message: "Veuillez entrer un numéro correct (10 chiffres)." }
     validates :contenue, :presence => {message: "Veuillez donnez des détails de votre soucis." }, :length => { minimum: 10, maximum: 1300, message: "Minimum 10 caractères." }
+    has_one_attached :facture
+    validates :facture, :presence => {message: "Veuillez donner une photo de votre facture." }
 end
