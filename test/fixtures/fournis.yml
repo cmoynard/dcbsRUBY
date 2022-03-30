@@ -3,9 +3,9 @@
 one:
   nom_f: MyString
   mail_f: MyString
-  num_f: MyString
+  num_f: 1
 
 two:
   nom_f: MyString
   mail_f: MyString
-  num_f: MyString
+  num_f: 1
