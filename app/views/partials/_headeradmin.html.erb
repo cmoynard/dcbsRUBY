@@ -13,7 +13,11 @@
         </ul>
 
         <div class="text-end">
-          <button class="btn btn-outline-danger"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
+          <% if request.path != "/accadmin" %>
+            <button class="btn btn-outline-danger"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
+          <% else %>
+            <button class="btn btn-outline-danger"><%= link_to "Retour partie Client", root_path, class: "no-underline"%></button>
+          <% end %>
         </div>
       </div>
       <div class="mt-3" style='border-top: 1px solid #3E4145; width: 70%; margin:0 auto'></div>
