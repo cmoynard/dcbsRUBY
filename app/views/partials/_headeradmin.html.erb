@@ -6,10 +6,32 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Accueil</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Demande SAV</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Site principal</a></li>
+          <% if request.path == "/accadmin" %>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+          <% elsif request.path == "/fournis" %>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+          <% elsif request.path == "/savforms" %>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+          <% elsif request.path == "/email" %>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+          <% else %>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+          <% end %>
         </ul>
 
         <div class="text-end">
