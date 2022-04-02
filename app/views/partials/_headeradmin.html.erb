@@ -7,25 +7,25 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <% if request.path == "/accadmin" %>
-            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 disabled"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
-          <% elsif request.path == "/fournis" %>
+          <% elsif request.path.include? "/fournis" %>
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 disabled"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
           <% elsif request.path == "/savforms" %>
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-disabled"%></li>
             <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
           <% elsif request.path == "/email" %>
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-secondary"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 disabled"%></li>
           <% else %>
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-secondary"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
@@ -36,9 +36,9 @@
 
         <div class="text-end">
           <% if request.path != "/accadmin" %>
-            <button class="btn btn-outline-danger"><%= link_to "Retour", accadmin_path, class: "no-underline"%></button>
+            <button class="btn btn-outline-danger"><%= link_to "Retour Admin", accadmin_path, class: "no-underline"%></button>
           <% else %>
-            <button class="btn btn-outline-danger"><%= link_to "Retour partie Client", root_path, class: "no-underline"%></button>
+            <button class="btn btn-outline-danger"><%= link_to "Retour Client", root_path, class: "no-underline"%></button>
           <% end %>
         </div>
       </div>
