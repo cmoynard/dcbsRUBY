@@ -13,11 +13,12 @@ class SavformsController < ApplicationController
   end
 
   def create
+    @fournis = Fourni.all
     @savform = Savform.new(savform_params)
     if @savform.save
       redirect_to root_path
     else
-      render :new
+      render :new, fournis: @fournis
     end
   end
 

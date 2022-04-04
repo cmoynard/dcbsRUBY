@@ -1,33 +1,38 @@
 <center>
 <%= form_with model: fourni do |form| %>
-
-    <div>
-        <%= form.label :nom, id:"simpletext" %><br>
-        <%= form.text_field :nom_f, placeholder: "Nom du fournisseur", class: "form-control" %>
-        <% fourni.errors.full_messages_for(:nom_f).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
-    <br>
-    <div>
-        <%= form.label :mail, id:"simpletext" %><br>
-        <%= form.text_field :mail_f, placeholder: "Mail du fournisseur", class: "form-control" %>
-        <% fourni.errors.full_messages_for(:mail_f).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
-    <br>
-    <div>
-        <%= form.label :numéro, id:"simpletext" %><br>
-        <%= form.text_field :num_f, placeholder: "Numéro de téléphone", class: "form-control" %>
-        <% fourni.errors.full_messages_for(:num_f).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
-    <br></br>
-    <div>
-        <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer dans la BDD</button>
-        <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
+    <div class="container-fluid">        
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div>
+                <%= form.label :nom, id:"simpletext" %><br>
+                <%= form.text_field :nom_f, placeholder: "Nom du fournisseur", class: "form-control" %>
+                <% fourni.errors.full_messages_for(:nom_f).each do |message| %>
+                    <div class="text-white"><%= message %></div>
+                <% end %>
+            </div>
+            <br>
+            <div>
+                <%= form.label :mail, id:"simpletext" %><br>
+                <%= form.text_field :mail_f, placeholder: "Mail du fournisseur", class: "form-control" %>
+                <% fourni.errors.full_messages_for(:mail_f).each do |message| %>
+                    <div class="text-white"><%= message %></div>
+                <% end %>
+            </div>
+            <br>
+            <div>
+                <%= form.label :numéro, id:"simpletext" %><br>
+                <%= form.text_field :num_f, placeholder: "Numéro de téléphone", class: "form-control" %>
+                <% fourni.errors.full_messages_for(:num_f).each do |message| %>
+                    <div class="text-white"><%= message %></div>
+                <% end %>
+            </div>
+            <br></br>
+            <div>
+                <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer dans la BDD</button>
+                <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
+            </div>
+        </div>
+        <div class="col-md-4">
     </div>
 
 <% end %>
