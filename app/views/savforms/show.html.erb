@@ -1,3 +1,7 @@
+<% if admin_signed_in? %>
+
+<% render partial: 'partials/headeradmin' %>
+
 <h1 id="title" class="display-2">Information</h1>
 <p id="simpletext"><strong>Nom : </strong><%=@savform.nom%></p>
 <p id="simpletext"><strong>Prénom : </strong><%=@savform.prenom%></p>
@@ -21,3 +25,10 @@
 
 
 <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>
+
+<% else %>
+    <script>
+      alert("Vous n'avez pas accès.");
+      location.href="http://127.0.0.1:3000";
+    </script>
+<% end %>

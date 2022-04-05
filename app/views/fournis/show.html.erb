@@ -1,3 +1,5 @@
+<% if admin_signed_in? %>
+
 <%= render partial: 'partials/headeradmin'%>
 
 <br/><br/>
@@ -15,3 +17,10 @@
 <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline" %></button><br>
 <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
 </center>
+
+<% else %>
+    <script>
+      alert("Vous n'avez pas accès.");
+      location.href="http://127.0.0.1:3000";
+    </script>
+<% end %>

@@ -1,3 +1,5 @@
+<% if admin_signed_in? %>
+
 <%= render partial: 'partials/headeradmin'%>
 
 <br/><br/>
@@ -5,3 +7,10 @@
 <h1 id="title">Modifier le fournisseur</h1>
 <br>
 <%= render "form", fourni: @fourni %>
+
+<% else %>
+    <script>
+      alert("Vous n'avez pas accès.");
+      location.href="http://127.0.0.1:3000";
+    </script>
+<% end %>

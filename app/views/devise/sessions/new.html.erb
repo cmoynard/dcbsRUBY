@@ -1,0 +1,48 @@
+<head></head>
+
+<body>
+
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-loginTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Connexion Admin</h5>
+      </div>
+      <div class="modal-body center" style="text-align: center;">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field mb-2">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field mb-2">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+        </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-secondary" href="/">Fermer</a>
+        <div class="actions">
+          <%= f.submit "Se connecter", :class=>"btn btn-outline-success"%> <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+  var $;
+  $(window).on('load', function(){
+    $("#modal-login").modal("show");
+    $('#modal-login').on('hide.bs.modal', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+  });
+</script>
+
+</body>

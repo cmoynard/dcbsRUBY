@@ -1,3 +1,5 @@
+<% if admin_signed_in? %>
+
 <%= render partial: 'partials/headeradmin'%>
 
 <br/><br/>
@@ -8,7 +10,7 @@
 <h2 id="title">Créer un fournisseur</h2>
 <br>
 <button class="btn btn-lg btn-outline-success"><%= link_to "Nouveau fournisseur", new_fourni_path, class: "no-underline"%></button>
-<br></br><br>
+<br/><br/>
 <h2 id="title">Liste fournisseurs</h2>
 <ul>
     <% @fournis.each do |fourni| %>
@@ -18,3 +20,10 @@
     <% end %>
 </ul>
 </center>
+
+<% else %>
+    <script>
+      alert("Vous n'avez pas accès.");
+      location.href="http://127.0.0.1:3000";
+    </script>
+<% end %>

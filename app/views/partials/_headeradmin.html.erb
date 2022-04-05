@@ -38,7 +38,7 @@
           <% if request.path != "/accadmin" %>
             <button class="btn btn-outline-danger"><%= link_to "Retour Admin", accadmin_path, class: "no-underline"%></button>
           <% else %>
-            <button class="btn btn-outline-danger"><%= link_to "Retour Client", root_path, class: "no-underline"%></button>
+            <button class="btn btn-outline-danger"><%= link_to "Retour Client", destroy_admin_session_path, class: "no-underline"%></button>
           <% end %>
         </div>
       </div>

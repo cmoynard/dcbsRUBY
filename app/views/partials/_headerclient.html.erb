@@ -25,10 +25,10 @@
         </ul>
 
         <div class="text-end">
-          <% if request.path != "/" %>
-          <button type="button" class="btn btn-outline-danger me-2"><%=link_to "Retour", root_path, class:  "no-underline"%></button>
+          <% if admin_signed_in? %>
+            <button type="button" class="btn btn-outline-danger me-2"><%=link_to "Connexion Admin", accadmin_path, class:  "no-underline"%></button>
           <% else %>
-          <button type="button" class="btn btn-outline-light me-2"><%=link_to "Connexion Admin", accadmin_path, class:  "no-underline"%></button>
+            <button type="button" class="btn btn-outline-danger me-2"><%=link_to "Connexion Admin", admin_session_path, class:  "no-underline"%></button>
           <% end %>
         </div>
       </div>

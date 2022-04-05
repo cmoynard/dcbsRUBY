@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  devise_for :admins, :skip => [:registrations]
+
   root to: "savforms#home"
 
   get "/accadmin", to: "fournis#accueil"
