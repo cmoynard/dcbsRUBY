@@ -7,18 +7,11 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <% if request.path == "/" %>
-            <li><%= link_to "Accueil", root_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><%= link_to "Demande SAV", new_savform_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
-            <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-white">Site principal</a></li>
-          <% elsif request.path == "/savforms/new" %>
-            <li><%= link_to "Accueil", root_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Demande SAV", new_savform_path, class: "no-underline nav-link px-2 disabled"%></li>
+            <li><%= link_to "Demande SAV", root_path, class: "no-underline nav-link px-2 disabled"%></li>
             <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
             <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-white">Site principal</a></li>
           <% else %>
-            <li><%= link_to "Accueil", root_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><%= link_to "Demande SAV", new_savform_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Demande SAV", root_path, class: "no-underline nav-link px-2 disabled"%></li>
             <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
             <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-white">Site principal</a></li>
           <% end %>
@@ -26,9 +19,9 @@
 
         <div class="text-end">
           <% if admin_signed_in? %>
-            <button type="button" class="btn btn-outline-danger me-2"><%=link_to "Connexion Admin", accadmin_path, class:  "no-underline"%></button>
+            <%=link_to "Connexion Admin", accadmin_path, class:  "no-underline btn btn-outline-danger me-2" %>
           <% else %>
-            <button type="button" class="btn btn-outline-danger me-2"><%=link_to "Connexion Admin", admin_session_path, class:  "no-underline"%></button>
+            <%=link_to "Connexion Admin", admin_session_path, class:  "no-underline btn btn-outline-danger me-2", 'data-turbolinks'=>"false"%>
           <% end %>
         </div>
       </div>
