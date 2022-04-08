@@ -1,6 +1,8 @@
 <% if admin_signed_in? %>
 
-<% render partial: 'partials/headeradmin' %>
+<%= render partial: 'partials/headeradmin'%>
+
+<div style="text-align: center;">
 
 <h1 id="title" class="display-2">Information</h1>
 <p id="simpletext"><strong>Nom : </strong><%=@savform.nom%></p>
@@ -15,7 +17,7 @@
 <p id="simpletext"><strong>Commentaire : </strong><%=@savform.contenue%></p>
 <p id="simpletext"><strong>Facture : </strong></p>
 <%if @savform.facture.attached?%>
-<%= image_tag @savform.facture, style: "width: 200px; display: block;" %>
+<%= image_tag @savform.facture, style: "width: 50%; item-align: center;", class: "mb-3" %>
 <% end %> <br>
 
 
@@ -25,6 +27,10 @@
 
 
 <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>
+
+</div>
+
+<%= render partial: "partials/footer"%>
 
 <% else %>
     <script>
