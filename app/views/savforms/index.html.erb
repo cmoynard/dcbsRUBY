@@ -2,18 +2,23 @@
 
 <%= render partial: 'partials/headeradmin'%>
 
-<br/><br/>
+<div style="text-align: center;">
+    <h1 id="title" class="display-1 my-4">Demandes de SAV en attente</h1>
+</div>
 
-<center>
-<h1 id="title" class="display-2">Liste des formulaires SAV</h1>
-<br>
-<ul>
-    <%@savforms.each do |savform|%>
-        <li><%=link_to savform.numCommande, savform%></li>
-    <%end%>
-
-</ul>
-</center>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center;">
+        <div class="card container col-md-8" style="background-color: rgb(40, 45, 58); border: 0;">
+            <div class="list-group" style="text-align: center;">
+                <%@savforms.each do |savform|%>
+                    <%=link_to savform.numCommande, savform, class: "list-group-item list-group-item-action mb-1" %>
+                <%end%>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
 
 <div class="fixed-bottom">
 <%= render partial: "partials/footer" %>

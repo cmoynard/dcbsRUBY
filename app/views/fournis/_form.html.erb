@@ -1,39 +1,35 @@
-<center>
-<%= form_with model: fourni do |form| %>
-    <div class="container-fluid">        
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <div>
-                <%= form.label :nom, id:"simpletext" %><br>
-                <%= form.text_field :nom_f, placeholder: "Nom du fournisseur", class: "form-control" %>
-                <% fourni.errors.full_messages_for(:nom_f).each do |message| %>
-                    <div class="text-white"><%= message %></div>
-                <% end %>
-            </div>
-            <br>
-            <div>
-                <%= form.label :mail, id:"simpletext" %><br>
-                <%= form.text_field :mail_f, placeholder: "Mail du fournisseur", class: "form-control" %>
-                <% fourni.errors.full_messages_for(:mail_f).each do |message| %>
-                    <div class="text-white"><%= message %></div>
-                <% end %>
-            </div>
-            <br>
-            <div>
-                <%= form.label :numéro, id:"simpletext" %><br>
-                <%= form.text_field :num_f, placeholder: "Numéro de téléphone", class: "form-control" %>
-                <% fourni.errors.full_messages_for(:num_f).each do |message| %>
-                    <div class="text-white"><%= message %></div>
-                <% end %>
-            </div>
-            <br></br>
-            <div>
-                <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer dans la BDD</button>
-                <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
-            </div>
+
+<div class="card container col-md-8 mb-4" style="background-color: rgb(40, 45, 58); border: 2px solid white;">
+    <div class="card-head" style="text-align: center;">
+        <h3 class='card-title text-white mt-4'>Rajouter un fournisseur.</h3>
+    </div>
+
+<div class="card-body">
+        <%= form_with model: fourni do |form| %>
+
+            <label class="form-label text-white m-0 mb-1" for="input-nomf">Nom du fournisseur</label>
+            <%= form.text_field :nom_f, placeholder: "Nom du fournisseur", class: "form-control mb-3", id:"input-nomf" %>
+            <% fourni.errors.full_messages_for(:nom_f).each do |message| %>
+                <div class="text-white"><%= message %></div>
+            <% end %>
+        
+            <label class="form-label text-white m-0 mb-1" for="input-mailf">Email</label>
+            <%= form.text_field :mail_f, placeholder: "Mail du fournisseur", class: "form-control mb-3", id:"input-mailf" %>
+            <% fourni.errors.full_messages_for(:mail_f).each do |message| %>
+                <div class="text-white"><%= message %></div>
+            <% end %>
+        
+            <label class="form-label text-white m-0 mb-1" for="input-numf">Numéro de téléphone</label>
+            <%= form.text_field :num_f, placeholder: "Numéro de téléphone", class: "form-control mb-4", id:"input-numf" %>
+            <% fourni.errors.full_messages_for(:num_f).each do |message| %>
+                <div class="text-white"><%= message %></div>
+            <% end %>
+
+        <div>
+            <button class="btn btn-lg btn-outline-success"><% form.submit %>Envoyer dans la BDD</button>
         </div>
-        <div class="col-md-4">
     </div>
 
 <% end %>
-</center>
+</div>
+</div>

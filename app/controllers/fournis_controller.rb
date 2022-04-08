@@ -6,6 +6,7 @@ class FournisController < ApplicationController
 
   def index
     @fournis = Fourni.all
+    @fourni = Fourni.new
   end
 
   def show

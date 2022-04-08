@@ -2,15 +2,13 @@
 
 <%= render partial: 'partials/headeradmin'%>
 
-<br/><br/>
+<div style="text-align: center;">
+  <h1 id="title" class="display-1 my-4">Interface administrateur</h1><br><br>
 
-<center>
-<h1 id="title" class="display-1">Interface administrateur</h1><br><br>
-
-<button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Page Fournisseur", fournis_path, class: "no-underline" %></button>
-<button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Liste SAV", savforms_path, class: "no-underline" %></button>
-<button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Page Email SAV", email_path , class: "no-underline"%></button>
-</center>
+  <button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Page Fournisseur", fournis_path, class: "no-underline" %></button>
+  <button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Liste SAV", savforms_path, class: "no-underline" %></button>
+  <button class="btn btn-lg btn-outline-dark mx-2"><%= link_to "Page Email SAV", email_path , class: "no-underline"%></button>
+</div>
 
 <div class="fixed-bottom">
 <%= render partial: "partials/footer" %>
