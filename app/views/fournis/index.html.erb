@@ -7,23 +7,23 @@
 
 
 <div class="row">
-<div class="col-md-2"></div>
-    <div class="col-md-4" style="text-align: center; item-align: center;" >
-        <div class="card container col-md-8" style="background-color: rgb(40, 45, 58); border: 0;">
-        <h2 class="my-4" id="title">Liste fournisseurs</h2>
-            <div class="list-group" styles="text-align: center;">
-                <% @fournis.each do |fourni| %>
-                    
-                        <%= link_to fourni.nom_f, fourni, class: "list-group-item list-group-item-action m-0 mb-1" %>
+    <div class="col-md-2"></div>
+        <div class="col-md-4" style="text-align: center; item-align: center;" >
+            <div class="card container col-md-8" style="background-color: rgb(40, 45, 58); border: 0;">
+            <h2 class="my-4" id="title">Liste fournisseurs</h2>
+                <div class="list-group" styles="text-align: center;">
+                    <% @fournis.each do |fourni| %>
+                        
+                            <%= link_to fourni.nom_f, fourni, class: "list-group-item list-group-item-action m-0 mb-1" %>
 
-                <% end %>
+                    <% end %>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <%= render "form", fourni: @fourni %>
-    </div>
-<div class="col-md-2"></div> 
+        <div class="col-md-4">
+            <%= render "form", fourni: @fourni %>
+        </div>
+    <div class="col-md-2"></div> 
 </div>
 
 <% else %>

@@ -2,11 +2,17 @@
 
 <%= render partial: 'partials/headeradmin'%>
 
-<br/><br/>
+<div style="text-align: center;">
+  <h1 id="title" class="display-1 my-4">Modifier le fournisseur</h1>
+</div>
 
-<h1 id="title">Modifier le fournisseur</h1>
-<br>
-<%= render "form", fourni: @fourni %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <%= render "formedit", fourni: @fourni %>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 
 <% else %>
     <script>

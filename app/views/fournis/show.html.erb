@@ -4,28 +4,33 @@
 
 <div style="text-align: center;">
   <h1 id="title" class="display-1 my-4"><strong><%= @fourni.nom_f %></strong></h1>
-</div>
 
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4" style="text-align: center;">
-    <div class="card container" style="background-color: rgb(40, 45, 58); border: 0;">
-      <div class="list-group" style="text-align: center;">
-        <ul>
-          <li class="list-group-item mb-1"><p>Nom : <%= @fourni.nom_f %></p></li>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="card container col-md-10" style="background-color: rgb(40, 45, 58); border: 0;">
+        <div class="list-group" style="item-align: center;">
+          <ul>
+            <li class="list-group-item mb-1"><p>Nom : <%= @fourni.nom_f %></p></li>
 
-          <li class="list-group-item mb-1"><p>Mail : <%= @fourni.mail_f %></p></li>
+            <li class="list-group-item mb-1"><p>Mail : <%= @fourni.mail_f %></p></li>
 
-          <li class="list-group-item mb-1"><p>Numéro : <%= @fourni.num_f %></p></li>
-        </u>
+            <li class="list-group-item mb-1"><p>Numéro : <%= @fourni.num_f %></p></li>
+          </u>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
   </div>
-  <div class="col-md-4"></div>
+
+
+  <button class="btn btn-lg btn-outline-success mx-2 mb-2"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button><br>
+  <button class="btn btn-lg btn-outline-danger mx-2 mb-2"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline" %></button><br>
+  <button class="btn btn-lg btn-outline-dark mb-4"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
 </div>
 
-<div style="text-align: center;">
-  <button class="btn btn-lg btn-outline-success mx-2"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button>
-  <button class="btn btn-lg btn-outline-danger mx-2"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline" %></button><br>
-  <button class="btn btn-lg btn-outline-dark my-4"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
+<div class="fixed-bottom">
+  <%= render partial: "partials/footer"%>
 </div>
 
 <% else %>
