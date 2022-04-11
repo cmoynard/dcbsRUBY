@@ -7,10 +7,6 @@ class SavformsController < ApplicationController
     @savform=Savform.find(params[:id])
   end
 
-  def download
-    @savform = Savform.find(params[:id])
-  end
-
   def new
     @savform = Savform.new
     @fournis = Fourni.all

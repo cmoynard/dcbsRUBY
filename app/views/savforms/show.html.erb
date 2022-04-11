@@ -9,21 +9,10 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2">Nom : <%=@savform.nom%></h4>
+    <h4 class="mx-2"><strong>Nom : </strong></h4> <h5><%=@savform.nom%></h5>
   </div>
   <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2">Prénom : <%=@savform.prenom%></h4>
-  </div>
-  <div class="col-md-2"></div>
-</div>
-
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2"><strong>Mail : </strong><%=@savform.mail%></h4>
-  </div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2"><strong>Adresse : </strong><%=@savform.adresse%></h4>
+    <h4 class="mx-2"><strong>Prénom : </strong></h4> <h5><%=@savform.prenom%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -31,10 +20,21 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2"><strong>Ville : </strong><%=@savform.ville%></h4>
+    <h4 class="mx-2"><strong>Mail : </strong></h4> <h5><%=@savform.mail%></h5>
   </div>
   <div class="col-md-4 text-white mb-3" style="text-align: center;">
-    <h4 class="mx-2"><strong>Code postal : </strong><%=@savform.postal%></h4>
+    <h4 class="mx-2"><strong>Adresse : </strong></h4> <h5><%=@savform.adresse%></h5>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Ville : </strong></h4> <h5><%=@savform.ville%></h5>
+  </div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Code postal : </strong></h4> <h5><%=@savform.postal%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -42,10 +42,10 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-4 text-white mb-4" style="text-align: center;">
-    <h4 class="mx-2"><strong>Numéro de téléphone : </strong><%=@savform.numTel%></h4>
+    <h4 class="mx-2"><strong>Numéro de téléphone : </strong></h4> <h5><%=@savform.numTel%></h5>
   </div>
   <div class="col-md-4 text-white mb-4" style="text-align: center;">
-    <h4 class="mx-2"><strong>Commentaire : </strong><%=@savform.contenue%></h4>
+    <h4 class="mx-2"><strong>Commentaire : </strong></h4> <h5><%=@savform.contenue%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -55,10 +55,10 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
-    <h4 class="mx-2"><strong>Numéro de commande : </strong><%=@savform.numCommande%></h4>
+    <h4 class="mx-2"><strong>Numéro de commande : </strong></h4> <h5><%=@savform.numCommande%></h5>
   </div>
   <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
-    <h4 class="mx-2"><strong>Fournisseur : </strong><%=@savform.fournisseur%></h4>
+    <h4 class="mx-2"><strong>Fournisseur : </strong></h4> <h5><%=@savform.fournisseur%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -74,7 +74,7 @@
 <div style="text-align: center;">
 
 
-  <button class="btn btn-lg btn-outline-success"><% link_to "Télécharger la facture", factload_path, class: "no-underline" %></button>
+  <a download="" href="<%= url_for(@savform.facture) %>" class="btn btn-lg btn-outline-success" id="factload">Télécharger la facture</a>
 
   <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
                     method: :delete,
