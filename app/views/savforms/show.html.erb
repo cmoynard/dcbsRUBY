@@ -3,31 +3,85 @@
 <%= render partial: 'partials/headeradmin'%>
 
 <div style="text-align: center;">
+  <h1 id="title" class="display-1 my-4">Information</h1>
+</div>
 
-<h1 id="title" class="display-2">Information</h1>
-<p id="simpletext"><strong>Nom : </strong><%=@savform.nom%></p>
-<p id="simpletext"><strong>Prénom : </strong><%=@savform.prenom%></p>
-<p id="simpletext"><strong>Mail : </strong><%=@savform.mail%></p>
-<p id="simpletext"><strong>Adresse : </strong><%=@savform.adresse%></p>
-<p id="simpletext"><strong>Ville : </strong><%=@savform.ville%></p>
-<p id="simpletext"><strong>Code postal : </strong><%=@savform.postal%></p>
-<p id="simpletext"><strong>Numéro de commande : </strong><%=@savform.numCommande%></p>
-<p id="simpletext"><strong>Fournisseur : </strong><%=@savform.fournisseur%></p>
-<p id="simpletext"><strong>Numéro de téléphone : </strong><%=@savform.numTel%></p>
-<p id="simpletext"><strong>Commentaire : </strong><%=@savform.contenue%></p>
-<p id="simpletext"><strong>Facture : </strong></p>
-<%if @savform.facture.attached?%>
-<%= image_tag @savform.facture, style: "width: 50%; item-align: center;", class: "mb-3" %>
-<% end %> <br>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2">Nom : <%=@savform.nom%></h4>
+  </div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2">Prénom : <%=@savform.prenom%></h4>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Mail : </strong><%=@savform.mail%></h4>
+  </div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Adresse : </strong><%=@savform.adresse%></h4>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Ville : </strong><%=@savform.ville%></h4>
+  </div>
+  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+    <h4 class="mx-2"><strong>Code postal : </strong><%=@savform.postal%></h4>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-4" style="text-align: center;">
+    <h4 class="mx-2"><strong>Numéro de téléphone : </strong><%=@savform.numTel%></h4>
+  </div>
+  <div class="col-md-4 text-white mb-4" style="text-align: center;">
+    <h4 class="mx-2"><strong>Commentaire : </strong><%=@savform.contenue%></h4>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="my-4" style='border-top: 1px solid white; width: 85%; margin:0 auto'></div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
+    <h4 class="mx-2"><strong>Numéro de commande : </strong><%=@savform.numCommande%></h4>
+  </div>
+  <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
+    <h4 class="mx-2"><strong>Fournisseur : </strong><%=@savform.fournisseur%></h4>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="text-white" style="text-align: center; item-align: center;">
+  <h4 class="my-3"><strong>Facture : </strong></h4>
+
+  <%if @savform.facture.attached?%>
+    <%= image_tag @savform.facture, style: "width: 30%; item-align: center;", class: "mb-3" %>
+  <% end %>
+</div>
+
+<div style="text-align: center;">
 
 
-<button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
-                  method: :delete,
-                  data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button>
+  <button class="btn btn-lg btn-outline-success"><% link_to "Télécharger la facture", factload_path, class: "no-underline" %></button>
+
+  <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
+                    method: :delete,
+                    data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button>
 
 
-<button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>
-
+  <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>
 </div>
 
 <%= render partial: "partials/footer"%>

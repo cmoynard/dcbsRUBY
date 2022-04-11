@@ -1,0 +1,7 @@
+<% Down.download(polymorphic_url(@savform.facture), destination: "/home/clems/Downloads") %>
+
+<script>
+      var pathe = "<% @savform.id %>";
+      alert("La facture à été téléchargée dans le dossier de téléchargement");
+      location.href="http://127.0.0.1:3000/savforms/".pathe."/";
+</script>

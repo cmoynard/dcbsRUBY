@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/envoiemail", to: "mails#envoie"
 
+  get "/factload", to: "savforms#download"
+
   resources :fournis
 
   resources :savforms
