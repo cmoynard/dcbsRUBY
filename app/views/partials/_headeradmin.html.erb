@@ -16,7 +16,7 @@
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 disabled"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
-          <% elsif request.path == "/savforms" %>
+          <% elsif request.path.include? "/savforms" %>
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 disabled"%></li>
