@@ -6,16 +6,18 @@
 <h1 id="title" class="display-2">Envoyer un mail !*</h1>
 </center>
 <br>
-<%= form_with(scope: "fournis") do |f| %>
+<%= form_with model: @mails do |f| %>
     <%= f.label :fournisseur , id:"simpletext"%><br>
-    <%= f.select :id, @fournis.map { |frn| [frn.nom_f, frn.id] } %><br><br>
+    <%= f.select :nomf, @fournis.map { |frn| [frn.nom_f, frn.id] } %><br><br>
 
     <%= f.label :commande, id:"simpletext" %><br>
-    <%= f.select :id, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
+    <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
+
+
+<br>
+<button class="btn btn-lg btn-outline-success"><% form.submit %>TEST</button>
 
 <% end %>
-<br>
-<button class="btn btn-lg btn-outline-success"><%= link_to "Envoyer un mail TEST", envoiemail_path, class: "no-underline"%></button>
 
 <div class="fixed-bottom">
 <%= render partial: "partials/footer" %>
