@@ -5,10 +5,15 @@ class MailsController < ApplicationController
         @fournis = Fourni.all
         @savforms = Savform.all
 
-        if @mail.save
-            MailSavMailer.with(mail: @mail).new_envoiemail
+        if @mails.save
+            MailSavMailer.with(mails: @mails).new_envoiemail
 
             flash[:success] = "L'email a bien été envoyé !"
+            redirect_to email_path
+        else 
+            flash[:error] = "L'email n'as pas été envoyé !"
+            redirect_to email_path
+        end
     end
 
     def envoie
@@ -16,7 +21,7 @@ class MailsController < ApplicationController
     end
 
     def mails_params
-        params.require(:mail).permit(:numcom, :nomf)
+        params.require(:mails).permit(:numcom, :nomf)
     end
-    
+
 end
