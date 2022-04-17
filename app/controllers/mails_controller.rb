@@ -14,5 +14,5 @@ class MailsController < ApplicationController
         MailSavMailer.new_envoiemail(data).deliver_now
         redirect_to "/"
     end
-    
+
 end
