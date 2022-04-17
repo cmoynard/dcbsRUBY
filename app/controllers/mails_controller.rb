@@ -1,22 +1,18 @@
 class MailsController < ApplicationController
 
     def index
-        @mails = mails.new(mails_params)
         @fournis = Fourni.all
         @savforms = Savform.all
-
-        if @mail.save
-            MailSavMailer.with(mail: @mail).new_envoiemail
-
-            flash[:success] = "L'email a bien été envoyé !"
     end
 
     def envoie
+        @mailsf = Fourni.find(params[:nomf]).mail_f
+        @sav_content = Savform.find(params[:numcom])
         
-    end
+        data = [@mailsf, @sav_content]
 
-    def mails_params
-        params.require(:mail).permit(:numcom, :nomf)
+        MailSavMailer.new_envoiemail(data).deliver_now
+        redirect_to "/"
     end
     
 end

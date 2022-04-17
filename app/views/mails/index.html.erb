@@ -6,7 +6,7 @@
 <h1 id="title" class="display-2">Envoyer un mail !*</h1>
 </center>
 <br>
-<%= form_with model: @mails do |f| %>
+<%= form_with url: "/envoiemail", method: :post do |f| %>
     <%= f.label :fournisseur , id:"simpletext"%><br>
     <%= f.select :nomf, @fournis.map { |frn| [frn.nom_f, frn.id] } %><br><br>
 
@@ -15,7 +15,7 @@
 
 
 <br>
-<button class="btn btn-lg btn-outline-success"><% form.submit %>TEST</button>
+<button class="btn btn-lg btn-outline-success"><% f.submit %>TEST</button>
 
 <% end %>
 

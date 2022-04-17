@@ -1,6 +1,6 @@
 class MailSavMailer < ApplicationMailer
-    def new_envoiemail
-        @mails = params[:mails]
+    def new_envoiemail(data)
+        @data = data
 
-        mail(to: , subject: "Demande de SAV DCBS pour commande : "@savforms.numCommande )
+        mail(to: @data[0], subject: "Demande de SAV DCBS pour commande : "@data[1].numCommande )
     end
