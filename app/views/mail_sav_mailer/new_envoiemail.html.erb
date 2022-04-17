@@ -3,6 +3,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>MON MAIL AHAHAHAHHAHAHAHAH</p>
+    <h1>Demande de SAV concernant la commande numéro <%= @data[1].numCommande %></h1>
+    <h2>A destination de <%= @data[0].nom_f %></h2><br>
+    <h2>
+    Détails de la demande<br>
+    --------------------------
+    </h2>
+
+    <p>Numéri de commande : <%= @data[1].numCommande %></p>
+    <p>Nom : <%= @data[1].nom %></p>
+    <p>Prénom : <%= @data[1].prenom %></p>
+    <p>Mail : <%= @data[1].mail %></p>
+    <p>Adresse : <%= @data[1].adresse %></p>
+    <p>Ville : <%= @data[1].ville %></p>
+    <p>Code postal : <%= @data[1].postal %></p>
+    <p>Numéro de téléphone : <%= @data[1].numTel %></p>
+    <p>Commentaire du client : <%= @data[1].contenue %></p>
+
   </body>
 </html>

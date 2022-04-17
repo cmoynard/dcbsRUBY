@@ -1,6 +1,5 @@
-class MailSavMailer < ApplicationMailer
-    def new_envoiemail(data)
-
+class ReponseMailer < ApplicationMailer
+    def repondre(data)
         @data = data
 
         delivery_options = {
@@ -12,6 +11,7 @@ class MailSavMailer < ApplicationMailer
             enable_starttls_auto: "true"
         }
 
-        mail(to: data[0].mail_f, from: delivery_options[:user_name], subject: "Demande de SAV DCBS pour commande : #{data[1].numCommande}", delivery_method_options: delivery_options)
+        mail(to: data.mail, from: delivery_options[:user_name], subject: "DCBS : Nous prenons en compte votre demande", delivery_method_options: delivery_options)
     end
+    
 end

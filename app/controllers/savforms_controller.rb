@@ -16,6 +16,7 @@ class SavformsController < ApplicationController
     @fournis = Fourni.all
     @savform = Savform.new(savform_params)
     if @savform.save
+      ReponseMailer.repondre(@savform).deliver_later
       redirect_to root_path
     else
       render :new, fournis: @fournis

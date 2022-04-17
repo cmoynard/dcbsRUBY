@@ -6,12 +6,13 @@ class MailsController < ApplicationController
     end
 
     def envoie
-        @mailsf = Fourni.find(params[:nomf]).mail_f
         @sav_content = Savform.find(params[:numcom])
-        
-        data = [@mailsf, @sav_content]
+        @sav_fournis = Fourni.find_by(nom_f: @sav_content.fournisseur)
 
-        MailSavMailer.new_envoiemail(data).deliver_now
+        data = [@sav_fournis, @sav_content]
+
+
+        MailSavMailer.new_envoiemail(data).deliver_later
         redirect_to "/"
     end
 

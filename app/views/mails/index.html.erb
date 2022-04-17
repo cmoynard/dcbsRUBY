@@ -7,8 +7,6 @@
 </center>
 <br>
 <%= form_with url: "/envoiemail", method: :post do |f| %>
-    <%= f.label :fournisseur , id:"simpletext"%><br>
-    <%= f.select :nomf, @fournis.map { |frn| [frn.nom_f, frn.id] } %><br><br>
 
     <%= f.label :commande, id:"simpletext" %><br>
     <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
