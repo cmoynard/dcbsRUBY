@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? %> <%# si la session admin est up, alors on charge la page %>
 
 <%= render partial: 'partials/headeradmin'%>
 
@@ -14,7 +14,7 @@
 
         <div class="card-body">
           <%= link_to "Page des fournisseurs", fournis_path, class: "btn btn-lg btn-outline-success mx-2 my-2 no-underline" %>
-        </div>
+        </div> <%# lien vers la page fournisseur avec la route fournis_path %>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
 
         <div class="card-body">
           <%= link_to "Demandes de SAV", savforms_path, class: "btn btn-lg btn-outline-success mx-2 my-2 no-underline" %>
-        </div>
+        </div> <%# lien vers la page sav avec la route savforms_path %>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
 
         <div class="card-body">
           <%= link_to "Envoie d'email SAV", email_path , class: "btn btn-lg btn-outline-success mx-2 my-2 no-underline"%>
-        </div>
+        </div> <%# lien vers la page email avec la route email_path  %>
       </div>
     </div>
   </div>
@@ -54,6 +54,6 @@
     <script>
       alert("Vous n'avez pas accès.");
       location.href="http://127.0.0.1:3000";
-    </script>
+    </script> <%# si la session admin n'est pas up, alors on renvoie vers la page d'accueil %>
 <% end %>
 
