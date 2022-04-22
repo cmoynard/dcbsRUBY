@@ -22,7 +22,7 @@
                 <%= form_with url: "/envoiemail", method: :post do |f| %>
 
                     <%= f.label :commande, id:"simpletext" %><br>
-                    <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
+                    <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] }, id:'numcomm' %>
 
                     <br>
 
@@ -42,8 +42,8 @@
 </div>
 
 <script>
-    $(':numcom').onchange(function(){
+    $('numcom').on('change', function(){
         var num = $(this).val();
-        $('.numcomm').html(string);
+        $('.numcomm').html(num);
     });
 </script>
