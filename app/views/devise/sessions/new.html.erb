@@ -6,16 +6,16 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Connexion Admin</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Connexion Admin</h5> <!-- modal de connexion  -->
       </div>
       <div class="modal-body center" style="text-align: center;">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <% if resource.errors.any? %>
+          <% if resource.errors.any? %> <!-- si il y a des erreurs -->
             <script>
-              window.location = "/";
+              window.location = "/"; // redirection vers la page d'accueil
             </script>
           <% end %>
-            <div class="field mb-2">
+            <div class="field mb-2"> <!-- champs du formulaire -->
                 <%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </div>
@@ -35,7 +35,7 @@
   </div>
 </div>
 
-<script>
+<script> // script pour afficher le modal de connexion
   $(window).on('load', function(){
     $("#modal-login").modal("show");
     $('#modal-login').on('hide.bs.modal', function (e) {

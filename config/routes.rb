@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   
-  devise_for :admins, :skip => [:registrations]
+  devise_for :admins, :skip => [:registrations] #définition des routes pour les admins avec skip des register sur le site
 
-  root to: "savforms#new"
+  root to: "savforms#new" #page de base du site
 
-  get "/accadmin", to: "fournis#accueil"
+  get "/accadmin", to: "fournis#accueil" #route pour la page d'accueil de l'admin
 
-  get "/email", to: "mails#index"
+  get "/email", to: "mails#index" #route pour la page des mails
 
-  post "/envoiemail", to: "mails#envoie"
+  post "/envoiemail", to: "mails#envoie" #route pour la page d'envoie
 
-  resources :fournis
+  resources :fournis #groupes de routes pour les page fournis
 
-  resources :savforms
+  resources :savforms #groupes de routes pour les page savforms
   
 end

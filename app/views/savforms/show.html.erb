@@ -1,6 +1,8 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? %> <!-- si l'admin est connecté -->'
 
-<%= render partial: 'partials/headeradmin'%>
+<%= render partial: 'partials/headeradmin'%> <!-- header admin -->
+
+<!-- page show des demandes de sav -->
 
 <div style="text-align: center;">
   <h1 id="title" class="display-1 my-4">Information</h1>
@@ -66,29 +68,29 @@
 <div class="text-white" style="text-align: center; item-align: center;">
   <h4 class="my-3"><strong>Facture : </strong></h4>
 
-  <%if @savform.facture.attached?%>
-    <%= image_tag @savform.facture, style: "width: 30%; item-align: center;", class: "mb-3" %>
+  <%if @savform.facture.attached?%> <!-- si une facture est attachée -->
+    <%= image_tag @savform.facture, style: "width: 30%; item-align: center;", class: "mb-3" %> <!-- affichage de la facture -->
   <% end %>
 </div>
 
 <div style="text-align: center;">
 
 
-  <a download="" href="<%= url_for(@savform.facture) %>" class="btn btn-lg btn-outline-success" id="factload">Télécharger la facture</a>
+  <a download="" href="<%= url_for(@savform.facture) %>" class="btn btn-lg btn-outline-success" id="factload">Télécharger la facture</a> <!-- bouton de téléchargement de la facture -->
 
   <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
                     method: :delete,
-                    data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button>
+                    data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button> <!-- bouton supprimer avec message de confirmation-->
 
 
-  <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button>
+  <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button> <!-- bouton retour -->
 </div>
 
-<%= render partial: "partials/footer"%>
+<%= render partial: "partials/footer"%> <!-- footer -->
 
 <% else %>
     <script>
       alert("Vous n'avez pas accès.");
-      location.href="http://127.0.0.1:3000";
+      location.href="http://127.0.0.1:3000"; // redirection vers la page d'accueil si l'admin n'est pas connecté
     </script>
 <% end %>

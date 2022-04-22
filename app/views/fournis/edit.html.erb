@@ -1,15 +1,15 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? %> <!-- si l'admin est connecté --> %>
 
 <%= render partial: 'partials/headeradmin'%>
 
 <div style="text-align: center;">
-  <h1 id="title" class="display-1 my-4">Modifier le fournisseur</h1>
+  <h1 id="title" class="display-1 my-4">Modifier le fournisseur</h1> <!-- Page edit de fournisseur -->
 </div>
 
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-    <%= render "formedit", fourni: @fourni %>
+    <%= render "formedit", fourni: @fourni %> <!-- formulaire edit fournisseur -->
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -17,6 +17,6 @@
 <% else %>
     <script>
       alert("Vous n'avez pas accès.");
-      location.href="http://127.0.0.1:3000";
+      location.href="http://127.0.0.1:3000"; // redirection vers la page d'accueil si l'admin n'est pas connecté
     </script>
 <% end %>

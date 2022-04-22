@@ -1,6 +1,6 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? %> <!-- si l'admin est connecté -->
 
-<%= render partial: 'partials/headeradmin'%>
+<%= render partial: 'partials/headeradmin'%> <!-- header admin -->  
 
 <br/><br/>
 
@@ -16,6 +16,6 @@
 <% else %>
     <script>
       alert("Vous n'avez pas accès.");
-      location.href="http://127.0.0.1:3000";
+      location.href="http://127.0.0.1:3000"; // redirection vers la page d'accueil si l'admin n'est pas connecté'
     </script>
 <% end %>

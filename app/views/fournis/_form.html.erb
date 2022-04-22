@@ -1,11 +1,11 @@
 
-<div class="card container col-md-8 my-4" style="background-color: rgb(40, 45, 58); border: 2px solid white;">
+<div class="card container col-md-8 my-4" style="background-color: rgb(40, 45, 58); border: 2px solid white;"> <!-- card du formulaire des fournisseurs -->
     <div class="card-head" style="text-align: center;">
         <h3 class='card-title text-white mt-4'>Rajouter un fournisseur.</h3>
     </div>
 
 <div class="card-body">
-        <%= form_with model: fourni do |form| %>
+        <%= form_with model: fourni do |form| %> <!-- formulaire de fournisseur -->
 
             <label class="form-label text-white m-0 mb-1" for="input-nomf">Nom du fournisseur</label>
             <%= form.text_field :nom_f, placeholder: "Nom du fournisseur", class: "form-control mb-3", id:"input-nomf" %>
@@ -34,6 +34,6 @@
 </div>
 </div>
 
-<div class="fixed-bottom">
-    <%= render partial: "partials/footer" %>
+<div class="fixed-bottom"> 
+    <%= render partial: "partials/footer" %> <!-- footer -->
 </div>

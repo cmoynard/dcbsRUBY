@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? %> <!-- si l'admin est connecté -->
 
 <%= render partial: 'partials/headeradmin'%>
 <div style="text-align: center;">
@@ -12,7 +12,7 @@
             <div class="card container col-md-8" style="background-color: rgb(40, 45, 58); border: 0;">
             <h2 class="my-4" id="title">Liste fournisseurs</h2>
                 <div class="list-group" styles="text-align: center;">
-                    <% @fournis.each do |fourni| %>
+                    <% @fournis.each do |fourni| %> <!-- liste des fournisseurs avec liens vers leur show -->
                         
                             <%= link_to fourni.nom_f, fourni, class: "list-group-item list-group-item-action m-0 mb-1" %>
 
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <%= render "form", fourni: @fourni %>
+            <%= render "form", fourni: @fourni %> <!-- formulaire new fournisseur -->
         </div>
     <div class="col-md-2"></div> 
 </div>
@@ -29,6 +29,6 @@
 <% else %>
     <script>
       alert("Vous n'avez pas accès.");
-      location.href="http://127.0.0.1:3000";
+      location.href="http://127.0.0.1:3000"; // redirection vers la page d'accueil si l'admin n'est pas connecté
     </script>
 <% end %>
