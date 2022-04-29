@@ -25,6 +25,8 @@
                     <%= f.label :commande, id:"simpletext" %><br>
                     <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
 
+                    <br>
+
                     <button class="btn btn-lg btn-outline-success my-3"><% f.submit %>Envoyer</button>
 
                     <% end %>
