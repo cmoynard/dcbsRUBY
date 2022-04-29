@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :admins, :skip => [:registrations] #définition des routes pour les admins avec skip des register sur le site
+  devise_for :admins #définition des routes pour les admins avec skip des register sur le site
 
   root to: "savforms#new" #page de base du site
 
