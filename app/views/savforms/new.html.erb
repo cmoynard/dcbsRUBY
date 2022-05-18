@@ -11,24 +11,24 @@
   <h4 id="title" class="display-6 mb-4">Votre demande de service après vente chez DCBS</h4>
 </div>
 
-<div class="card container col-md-6 mb-4" style="background-color: rgb(40, 45, 58); border: 2px solid white;">
+<div class="card container col-md-6 mb-4" style="border: 2px solid;">
   <div class="card-head" style="text-align: center;">
-    <h3 class='card-title text-white mt-4'>Veuillez compléter ce formulaire.</h3>
-    <h6 class='card-title text-white mt-1'>Les champs dotés d'un astérix (*) sont obligatoires.</h6>
+    <h3 class='card-title  mt-4'>Veuillez compléter ce formulaire.</h3>
+    <h6 class='card-title  mt-1'>Les champs dotés d'un astérix (*) sont obligatoires.</h6>
   </div>
   
   <div class="card-body"> <!-- formulaire de sav -->
       <%= form_with model: @savform do |form| %> 
           <div class="row">
             <div class="col-md-6"> 
-              <label class="form-label text-white m-0" for="input-nom">Nom*</label>
+              <label class="form-label  m-0" for="input-nom">Nom*</label>
               <%= form.text_field :nom, class:"form-control mb-3", id: "input-nom" %>
               <% @savform.errors.full_messages_for(:nom).each do |message| %>
                 <%= message %>
               <% end %>
             </div>
             <div class="col-md-6">  
-              <label class="form-label text-white m-0" for="input-prenom">Prénom*</label>
+              <label class="form-label  m-0" for="input-prenom">Prénom*</label>
               <%= form.text_field :prenom, class:"form-control mb-3", id:"input-prenom" %>
               <% @savform.errors.full_messages_for(:prenom).each do |message| %>
                 <%= message %>
@@ -36,13 +36,13 @@
             </div>
           </div>
           
-          <label class="form-label text-white m-0" for="input-mail">Email*</label>
+          <label class="form-label  m-0" for="input-mail">Email*</label>
           <%= form.text_field :mail, class:"form-control mb-3", id:"input-mail" %>
           <% @savform.errors.full_messages_for(:mail).each do |message| %>
             <%= message %>
           <% end %>
 
-          <label class="form-label text-white m-0" for="input-adresse">Adresse*</label>
+          <label class="form-label  m-0" for="input-adresse">Adresse*</label>
           <%= form.text_field :adresse, class:"form-control mb-3", id:"input-adresse"%>
           <% @savform.errors.full_messages_for(:adresse).each do |message| %>
             <%= message %>
@@ -50,14 +50,14 @@
 
           <div class="row">
             <div class="col-md-6">
-              <label class="form-label text-white m-0" for="input-ville">Ville*</label>
+              <label class="form-label  m-0" for="input-ville">Ville*</label>
               <%= form.text_field :ville, class:"form-control mb-3", id:"input-ville"%>
               <% @savform.errors.full_messages_for(:ville).each do |message| %>
                 <%= message %>
               <% end %>
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white m-0" for="input-postal">Code postal*</label>
+              <label class="form-label  m-0" for="input-postal">Code postal*</label>
               <%= form.text_field :postal, class:"form-control mb-3", id:"input-postal" %>
               <% @savform.errors.full_messages_for(:postal).each do |message| %>
                 <%= message %>
@@ -67,14 +67,14 @@
 
           <div class="row">
             <div class="col-md-6">
-              <label class="form-label text-white m-0" for="input-numCommande">Numéro de commande*</label>
+              <label class="form-label  m-0" for="input-numCommande">Numéro de commande*</label>
               <%= form.text_field :numCommande, class:"form-control mb-3", id:"input-numCommande" %>
               <% @savform.errors.full_messages_for(:numCommande).each do |message| %>
                 <%= message %>
               <% end %>
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white m-0" for="input-Tel">Numéro de téléphone*</label>
+              <label class="form-label  m-0" for="input-Tel">Numéro de téléphone*</label>
               <%= form.text_field :numTel, class:"form-control mb-3", id:"input-numTel"%>
               <% @savform.errors.full_messages_for(:numTel).each do |message| %>
                 <%= message %>
@@ -84,14 +84,14 @@
 
           <div class="row">
             <div class="col-md-6" style="item-align: center;">
-              <label class="form-label text-white m-0" for="input-fournisseur">Fournisseur concerné*</label>
+              <label class="form-label  m-0" for="input-fournisseur">Fournisseur concerné*</label>
               <%= form.select :fournisseur, @fournis.map { |frn| [frn.nom_f] ; }, {}, {class: "form-control mb-3", id:"input-fournisseur"} %>
 
-              <label class="form-label text-white m-0 mb-3" for="input-facture">Facture du produit*</label>
-              <%= form.file_field :facture, id:"simpletext", class: "form-control-file mb-3 text-white", onchange: "readURL(this);", id: "input-facture" %>
+              <label class="form-label  m-0 mb-3" for="input-facture">Facture du produit*</label>
+              <%= form.file_field :facture, id:"simpletext", class: "form-control-file mb-3 ", onchange: "readURL(this);", id: "input-facture" %>
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white m-0" for="input-contenue">Votre problème*</label>
+              <label class="form-label  m-0" for="input-contenue">Votre problème*</label>
               <%= form.text_area :contenue, rows:"4", cols:"25", class: "form-control mb-3", id: "input-contenue" %>
               <% @savform.errors.full_messages_for(:contenue).each do |message| %>
                 <%= message %>

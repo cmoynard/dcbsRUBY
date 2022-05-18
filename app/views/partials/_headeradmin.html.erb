@@ -1,44 +1,44 @@
-<header class="p-3 text-white"> <!-- header pour la partie des admins -->
+<header class="p-3 text-dark"> <!-- header pour la partie des admins -->
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <% if request.path == "/accadmin" %> <!-- si l'url est /accadmin, on affiche ces boutons -->
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-dark"%></li>
           <% elsif request.path.include? "/fournis" %> <!-- si l'url inclut /fournis, on affiche ces boutons -->
-            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-dark"%></li>
             <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-dark"%></li>
           <% elsif request.path.include? "/savforms" %> <!-- si l'url inclut /savforms, on affiche ces boutons -->
-            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-dark"%></li>
             <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-dark"%></li>
           <% elsif request.path == "/email" %> <!-- si l'url est /email, on affiche ces boutons -->
-            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-dark"%></li>
             <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 disabled"%></li>
           <% else %> <!-- sinon on affiche ces boutons -->
             <li><%= link_to "Accueil Admin", accadmin_path, class: "no-underline nav-link px-2 text-secondary"%></li>
-            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-white"%></li>
-            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-white"%></li>
+            <li><%= link_to "Fournisseurs", fournis_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Liste SAV", savforms_path, class: "no-underline nav-link px-2 text-dark"%></li>
+            <li><%= link_to "Emails automatiques", email_path, class: "no-underline nav-link px-2 text-dark"%></li>
           <% end %>
         </ul>
 
         <div class="text-end">
           <% if request.path != "/accadmin" %> <!-- si on est pas sur la page accadmin, on affiche le bouton pour y retourner -->
-            <button class="btn btn-outline-danger"><%= link_to "Retour Admin", accadmin_path, class: "no-underline"%></button>
+            <%= link_to "Retour Admin", accadmin_path, class: "no-underline btn btn-outline-danger"%>
           <% else %>  <!-- sinon on affiche le bouton pour se déconnecter -->
-            <button class="btn btn-outline-danger"><%= link_to "Retour Client", destroy_admin_session_path, class: "no-underline"%></button>
+            <%= link_to "Retour Client", destroy_admin_session_path, class: "no-underline btn btn-outline-danger"%>
           <% end %>
         </div>
       </div>

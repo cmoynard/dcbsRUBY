@@ -13,10 +13,10 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <div class="card container col-md-8 my-4" style="background-color: rgb(40, 45, 58); border: 2px solid white;">
+        <div class="card container col-md-8 my-4" style="border: 2px solid;">
             <div class="card-head" style="text-align: center;">
-                <h3 class='card-title text-white mt-4'>Selectionner la commande à envoyer</h3>
-                <h6 class='card-title text-white mb-4'>(Le mail est envoyé au fournisseur précisé dans la demande)</h6>
+                <h3 class='card-title  mt-4'>Selectionner la commande à envoyer</h3>
+                <h6 class='card-title  mb-4'>(Le mail est envoyé au fournisseur précisé dans la demande)</h6>
             </div>
 
             <div class="card-body" style="text-align: center;">
@@ -24,7 +24,7 @@
 
                     <%= f.label :commande, id:"simpletext" %><br>
                     <%= f.select :numcom, @savforms.map { |svf| [svf.numCommande, svf.id] } %>
-
+                    
                     <br>
 
                     <button class="btn btn-lg btn-outline-success my-3"><% f.submit %>Envoyer</button>

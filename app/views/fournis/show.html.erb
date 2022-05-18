@@ -8,14 +8,14 @@
   <div class="row"> <!-- liste des infos sur le fournisseur -->
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <div class="card container col-md-10" style="background-color: rgb(40, 45, 58); border: 0;">
+      <div class="card container col-md-10" style="border: 0;">
         <div class="list-group" style="item-align: center;">
           <ul>
-            <li class="list-group-item mb-1"><p>Nom : <%= @fourni.nom_f %></p></li>
+            <li class="list-group-item mb-1 border border-2"><p>Nom : <%= @fourni.nom_f %></p></li>
 
-            <li class="list-group-item mb-1"><p>Mail : <%= @fourni.mail_f %></p></li>
+            <li class="list-group-item mb-1 border border-2"><p>Mail : <%= @fourni.mail_f %></p></li>
 
-            <li class="list-group-item mb-1"><p>Numéro : <%= @fourni.num_f %></p></li>
+            <li class="list-group-item mb-1 border border-2"><p>Numéro : <%= @fourni.num_f %></p></li>
           </u>
         </div>
       </div>
@@ -24,9 +24,9 @@
   </div>
 
   <!-- boutons de modification, suppression de fournisseur ou de retour -->
-  <button class="btn btn-lg btn-outline-success mx-2 mb-2"><%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline"%></button><br>
-  <button class="btn btn-lg btn-outline-danger mx-2 mb-2"><%= link_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline" %></button><br>
-  <button class="btn btn-lg btn-outline-dark mb-4"><%= link_to "Retour", fournis_path, class: "no-underline"%></button>
+  <%= link_to "Modifer ce Fournisseur", edit_fourni_path(@fourni), class: "no-underline btn btn-lg btn-outline-success my-1"%>
+  <%= button_to "Supprimer ce fournisseur", fourni_path(@fourni), method: :delete, data: { confirm: "Confirmer la suppression ?" }, class: "no-underline btn btn-lg btn-outline-danger my-1" %>
+  <%= link_to "Retour", fournis_path, class: "no-underline btn btn-lg btn-outline-dark my-1"%>
 </div>
 
 <div class="fixed-bottom">

@@ -9,10 +9,10 @@
 <div class="row"> <!-- liste des demandes de SAV avec liens vers leur show -->
     <div class="col-md-4"></div>
     <div class="col-md-4" style="text-align: center;">
-        <div class="card container col-md-8" style="background-color: rgb(40, 45, 58); border: 0;">
+        <div class="card container col-md-8" style="border: 0;">
             <div class="list-group" style="text-align: center;">
                 <%@savforms.each do |savform|%>
-                    <%=link_to savform.numCommande, savform, class: "list-group-item list-group-item-action mb-1" %> 
+                    <%=link_to savform.numCommande, savform, class: "list-group-item list-group-item-action mb-1 border border-1" %> 
                 <%end%>
             </div>
         </div>

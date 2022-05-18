@@ -1,23 +1,23 @@
-<header class="p-3 text-white"> <!-- header pour les clients -->
+<header class="p-3"> <!-- header pour les clients -->
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <% if request.path == "/" %> <!-- si la page est la page d'accueil -->
             <li><%= link_to "Demande SAV", root_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
-            <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-white">Site principal</a></li>
+            <li><a href="#" class="nav-link px-2 text-dark">Contact</a></li>
+            <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-dark">Site principal</a></li>
           <% else %> <!-- sinon -->
             <li><%= link_to "Demande SAV", root_path, class: "no-underline nav-link px-2 disabled"%></li>
-            <li><a href="#" class="nav-link px-2 text-white">Contact</a></li>
-            <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-white">Site principal</a></li>
+            <li><a href="#" class="nav-link px-2 text-dark">Contact</a></li>
+            <li><a href="https://www.dcbs.fr/" class="nav-link px-2 text-dark">Site principal</a></li>
           <% end %>
         </ul>
 
-        <div class="text-end">
+        <div class="text-dark">
           <% if admin_signed_in? %> <!-- si l'admin est connecté -->
             <%=link_to "Connexion Admin", accadmin_path, class:  "no-underline btn btn-outline-danger me-2" %>
           <% else %> <!-- sinon -->

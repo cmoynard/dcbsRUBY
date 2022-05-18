@@ -10,10 +10,10 @@
 
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Nom : </strong></h4> <h5><%=@savform.nom%></h5>
   </div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Prénom : </strong></h4> <h5><%=@savform.prenom%></h5>
   </div>
   <div class="col-md-2"></div>
@@ -21,10 +21,10 @@
 
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Mail : </strong></h4> <h5><%=@savform.mail%></h5>
   </div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Adresse : </strong></h4> <h5><%=@savform.adresse%></h5>
   </div>
   <div class="col-md-2"></div>
@@ -32,10 +32,10 @@
 
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Ville : </strong></h4> <h5><%=@savform.ville%></h5>
   </div>
-  <div class="col-md-4 text-white mb-3" style="text-align: center;">
+  <div class="col-md-4  mb-3" style="text-align: center;">
     <h4 class="mx-2"><strong>Code postal : </strong></h4> <h5><%=@savform.postal%></h5>
   </div>
   <div class="col-md-2"></div>
@@ -43,47 +43,46 @@
 
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-4" style="text-align: center;">
+  <div class="col-md-4  mb-4" style="text-align: center;">
     <h4 class="mx-2"><strong>Numéro de téléphone : </strong></h4> <h5><%=@savform.numTel%></h5>
   </div>
-  <div class="col-md-4 text-white mb-4" style="text-align: center;">
+  <div class="col-md-4  mb-4" style="text-align: center;">
     <h4 class="mx-2"><strong>Commentaire : </strong></h4> <h5><%=@savform.contenue%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
 
-<div class="my-4" style='border-top: 1px solid white; width: 85%; margin:0 auto'></div>
+<div class="my-4" style='border-top: 1px solid; width: 85%; margin:0 auto'></div>
 
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
+  <div class="col-md-4  mb-3 mt-4" style="text-align: center;">
     <h4 class="mx-2"><strong>Numéro de commande : </strong></h4> <h5><%=@savform.numCommande%></h5>
   </div>
-  <div class="col-md-4 text-white mb-3 mt-4" style="text-align: center;">
+  <div class="col-md-4  mb-3 mt-4" style="text-align: center;">
     <h4 class="mx-2"><strong>Fournisseur : </strong></h4> <h5><%=@savform.fournisseur%></h5>
   </div>
   <div class="col-md-2"></div>
 </div>
 
-<div class="text-white" style="text-align: center; item-align: center;">
+<div class="" style="text-align: center; item-align: center;">
   <h4 class="my-3"><strong>Facture : </strong></h4>
 
   <%if @savform.facture.attached?%> <!-- si une facture est attachée -->
-    <%= image_tag @savform.facture, style: "width: 30%; item-align: center;", class: "mb-3" %> <!-- affichage de la facture -->
+    <%= image_tag @savform.facture, style: "width: 30%; item-align: center;", class: "mb-3"%> <!-- affichage de la facture -->
   <% end %>
 </div>
 
 <div style="text-align: center;">
 
 
-  <a download="" href="<%= url_for(@savform.facture) %>" class="btn btn-lg btn-outline-success" id="factload">Télécharger la facture</a> <!-- bouton de téléchargement de la facture -->
+  <a download="" href="<%= url_for(@savform.facture) %>" class="btn btn-lg btn-outline-success my-1" id="factload">Télécharger la facture</a> <!-- bouton de téléchargement de la facture -->
 
-  <button class="btn btn-lg btn-outline-danger"><%= link_to "Supprimer", savform_path(@savform),
-                    method: :delete,
-                    data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" },class:"no-underline" %></button> <!-- bouton supprimer avec message de confirmation-->
+  <%= button_to "Supprimer", savform_path(@savform), method: :delete,
+                    data: { confirm: "Êtes vous sûr de vouloir supprimer cette demande ?" }, class:"no-underline btn btn-lg btn-outline-danger my-1" %> <!-- bouton supprimer avec message de confirmation-->
 
 
-  <button class="btn btn-lg btn-outline-dark"><%= link_to "Retour", savforms_path, class:"no-underline" %></button> <!-- bouton retour -->
+  <%= link_to "Retour", savforms_path, class:"no-underline btn btn-lg btn-outline-dark my-1" %> <!-- bouton retour -->
 </div>
 
 <%= render partial: "partials/footer"%> <!-- footer -->

@@ -17,17 +17,4 @@
 .no-underline,
 .no-underline:hover {
     text-decoration: none !important;
-    color: aliceblue;
-}
-
-body {
-    background-color: rgb(40, 45, 58);
-}
-
-#title {
-    color: aliceblue;
-}
-
-#simpletext {
-    color: aliceblue;
 }
